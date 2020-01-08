@@ -9,4 +9,12 @@ Cinema.prototype.titlesOfFilms = function (films) {
     })
     return filmTitles
 };
+
+
+Cinema.prototype.findFilmByTitle = function (title) {
+  const filmByTitle = this.films.find((film) => {
+    return title === film.title;
+  })
+  return filmByTitle;
+};
 module.exports = Cinema;

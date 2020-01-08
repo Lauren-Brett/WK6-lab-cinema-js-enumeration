@@ -73,6 +73,10 @@ describe('Cinema', function () {
   });
 
 
-  it('should be able to calculate total running time of all films');
+  it('should be able to calculate total running time of all films', function () {
+    const expected = 622
+    const actual = cinema.totalRunningLength()
+    assert.strictEqual(actual, expected)
+  });
 
 });

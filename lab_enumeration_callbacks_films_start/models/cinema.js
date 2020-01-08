@@ -40,4 +40,12 @@ Cinema.prototype.checkFilmOverLength= function (length) {
   return filmLength;
 };
 
+
+Cinema.prototype.totalRunningLength = function () {
+  let totalLength = this.films.reduce( (runningTotal, film) => {
+    return runningTotal + film.length;
+  }, 0 )
+  return totalLength;
+};
+
 module.exports = Cinema;

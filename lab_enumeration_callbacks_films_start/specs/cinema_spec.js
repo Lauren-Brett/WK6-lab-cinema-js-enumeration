@@ -65,7 +65,6 @@ describe('Cinema', function () {
   });
 
 
-
   it('should be able to check whether all films are over a particular length', function () {
     const expected = true;
     const actual = cinema.checkFilmOverLength(95)
@@ -74,9 +73,18 @@ describe('Cinema', function () {
 
 
   it('should be able to calculate total running time of all films', function () {
-    const expected = 622
+    const expected = 622;
     const actual = cinema.totalRunningLength()
     assert.strictEqual(actual, expected)
+  });
+
+
+  it('should be able to filter films by property', function () {
+    const expected = [moonlight, trainspotting]
+    const expected = film.year
+    const actual = cinema.filterFilmsByProperty(genre, 'drama')
+    const actual = cinema.filterFilmsByProperty(year, 2016)
+    assert.deepStrictEqual(actual, expected)
   });
 
 });
